@@ -4,14 +4,15 @@
       "type": "nm-hero",
       "settings": {
         "overlay_opacity": 40,
-        "show_float": true,
         "badge": "#1 WEIGHT LOSS PROGRAM",
         "heading": "Weight Loss | Backed By <em>Science</em>",
-        "text": "No Diet. No Exercise.Ditch The Weight, Gain Control.",
+        "text": "No Diet. No Exercise. Ditch The Weight, Gain Control.",
         "button_label": "GET QUALIFIED TODAY",
         "button_link": "shopify://collections/all",
         "rating_text": "Rated 4.8/5.0 (<a href=\"#nm-reviews\">Over 20,000 happy customers</a>)",
-        "rating_alt": "Rated 5 out of 5 stars"
+        "rating_alt": "Rated 5 out of 5 stars",
+        "image": "shopify://shop_images/nm-hero-bg.jpg",
+        "float_image": "shopify://shop_images/nm-hero-bottle.png"
       }
     },
     "trust": {
@@ -20,29 +21,29 @@
         "trust-1": {
           "type": "item",
           "settings": {
-            "icon_default": "nm-trust-medal",
-            "text": "US-licensed healthcare providers"
+            "text": "US-licensed healthcare providers",
+            "icon": "shopify://shop_images/nm-trust-medal.svg"
           }
         },
         "trust-2": {
           "type": "item",
           "settings": {
-            "icon_default": "nm-trust-consult",
-            "text": "Free online consultation"
+            "text": "Free online consultation",
+            "icon": "shopify://shop_images/nm-trust-consult.svg"
           }
         },
         "trust-3": {
           "type": "item",
           "settings": {
-            "icon_default": "nm-trust-delivery",
-            "text": "Free, discreet shipping"
+            "text": "Free, discreet shipping",
+            "icon": "shopify://shop_images/nm-trust-delivery.svg"
           }
         },
         "trust-4": {
           "type": "item",
           "settings": {
-            "icon_default": "nm-trust-approve",
-            "text": "FDA-approved pharmacies"
+            "text": "FDA-approved pharmacies",
+            "icon": "shopify://shop_images/nm-trust-approve.svg"
           }
         }
       },
@@ -69,13 +70,13 @@
             "badge_style": "green",
             "description": "The same active ingredient in Mounjaro® and Zepbound™*",
             "price_text": "Price: $279",
-            "image_default": "nm-product-tirzepatide",
             "image_width": 215,
             "image_offset": 0,
             "button_label": "GET STARTED",
             "button_link": "shopify://collections/all",
             "disabled": false,
-            "title_width": 300
+            "title_width": 300,
+            "image": "shopify://shop_images/nm-product-tirzepatide.png"
           }
         },
         "card-2": {
@@ -87,13 +88,13 @@
             "badge_style": "white",
             "description": "The same active ingredient in Ozempic® and Wegovy®",
             "price_text": "Price: $169",
-            "image_default": "nm-product-semaglutide",
             "image_width": 215,
             "image_offset": 0,
             "button_label": "GET STARTED",
             "button_link": "shopify://collections/all",
             "disabled": false,
-            "title_width": 300
+            "title_width": 300,
+            "image": "shopify://shop_images/nm-product-semaglutide.png"
           }
         },
         "card-3": {
@@ -105,12 +106,12 @@
             "badge_style": "amber",
             "description": "The powerful and affordable generic form of Viagra",
             "price_text": "Price: $",
-            "image_default": "nm-product-sildenafil",
             "image_width": 286,
             "image_offset": 10,
             "button_label": "COMING SOON",
             "disabled": true,
-            "title_width": 300
+            "title_width": 300,
+            "image": "shopify://shop_images/nm-product-sildenafil.png"
           }
         },
         "card-4": {
@@ -122,12 +123,12 @@
             "badge_style": "red",
             "description": "Reduce the number of awakenings per night.",
             "price_text": "Price: $",
-            "image_default": "nm-product-trazodone",
             "image_width": 263,
             "image_offset": 4,
             "button_label": "SOLD OUT",
             "disabled": true,
-            "title_width": 300
+            "title_width": 300,
+            "image": "shopify://shop_images/nm-product-trazodone.png"
           }
         }
       },
@@ -139,7 +140,9 @@
       ],
       "settings": {
         "heading": "Recognizing | Your <em>Uniqueness</em>",
-        "text": "We prioritize convenience and affordability, guaranteeing easy access to top-quality care that's always within your reach."
+        "text": "We prioritize convenience and affordability, guaranteeing easy access to top-quality care that's always within your reach.",
+        "in_stock_label": "In Stock",
+        "sold_out_label": "Sold Out"
       }
     },
     "steps": {
@@ -149,27 +152,27 @@
           "type": "step",
           "settings": {
             "title": "Online Medical Form",
-            "image_default": "nm-step-1",
             "image_width": 206,
-            "image_offset": 0
+            "image_offset": 0,
+            "image": "shopify://shop_images/nm-step-1.png"
           }
         },
         "step-2": {
           "type": "step",
           "settings": {
             "title": "Telehealth Call",
-            "image_default": "nm-step-2",
             "image_width": 206,
-            "image_offset": 0
+            "image_offset": 0,
+            "image": "shopify://shop_images/nm-step-2.png"
           }
         },
         "step-3": {
           "type": "step",
           "settings": {
             "title": "Receive Medication",
-            "image_default": "nm-step-3",
             "image_width": 368,
-            "image_offset": 11
+            "image_offset": 11,
+            "image": "shopify://shop_images/nm-step-3.png"
           }
         }
       },
@@ -188,33 +191,33 @@
         "why-1": {
           "type": "reason",
           "settings": {
-            "icon_default": "nm-why-1",
             "title": "Appetite Suppression",
-            "text": "Known for its effective hunger craving reduction"
+            "text": "Known for its effective hunger craving reduction",
+            "icon": "shopify://shop_images/nm-why-1.svg"
           }
         },
         "why-2": {
           "type": "reason",
           "settings": {
-            "icon_default": "nm-why-2",
             "title": "Improves Health",
-            "text": "Incorporating nutrition, physical activity and mental well-being"
+            "text": "Incorporating nutrition, physical activity and mental well-being",
+            "icon": "shopify://shop_images/nm-why-2.svg"
           }
         },
         "why-3": {
           "type": "reason",
           "settings": {
-            "icon_default": "nm-why-3",
             "title": "Lose Weight",
-            "text": "Begin your transformation, shedding 23% of weight in no time"
+            "text": "Begin your transformation, shedding 23% of weight in no time",
+            "icon": "shopify://shop_images/nm-why-3.svg"
           }
         },
         "why-4": {
           "type": "reason",
           "settings": {
-            "icon_default": "nm-why-4",
             "title": "No Hidden Fees",
-            "text": "Includes Provider & Medication | No Fees – No Insurance Needed"
+            "text": "Includes Provider & Medication | No Fees – No Insurance Needed",
+            "icon": "shopify://shop_images/nm-why-4.svg"
           }
         }
       },
@@ -234,29 +237,29 @@
         "feat-1": {
           "type": "feature",
           "settings": {
-            "icon_default": "nm-feat-delivery",
-            "text": "Free, discreet shipping"
+            "text": "Free, discreet shipping",
+            "icon": "shopify://shop_images/nm-feat-delivery.svg"
           }
         },
         "feat-2": {
           "type": "feature",
           "settings": {
-            "icon_default": "nm-feat-consult",
-            "text": "Free online consultation"
+            "text": "Free online consultation",
+            "icon": "shopify://shop_images/nm-feat-consult.svg"
           }
         },
         "feat-3": {
           "type": "feature",
           "settings": {
-            "icon_default": "nm-feat-certificate",
-            "text": "US-licensed healthcare providers"
+            "text": "US-licensed healthcare providers",
+            "icon": "shopify://shop_images/nm-feat-certificate.svg"
           }
         },
         "feat-4": {
           "type": "feature",
           "settings": {
-            "icon_default": "nm-feat-stamp",
-            "text": "FDA-approved pharmacies"
+            "text": "FDA-approved pharmacies",
+            "icon": "shopify://shop_images/nm-feat-stamp.svg"
           }
         }
       },
@@ -271,17 +274,18 @@
         "pill": "Popular",
         "heading": "Sustainable <em>Weight</em> | <em>Loss</em> Based On Biology",
         "button_label": "GET STARTED",
-        "button_link": "shopify://collections/all"
+        "button_link": "shopify://collections/all",
+        "image": "shopify://shop_images/nm-sustainable.png"
       }
     },
     "calculator": {
       "type": "nm-weight-calculator",
       "settings": {
-        "heading": "How Much Weight Could | You <em>Loose</em> With <em>Nativemed</em>?",
+        "heading": "How Much Weight Could | You <em>Lose</em> With <em>Nativemed</em>?",
         "button_label": "GET QUALIFIED TODAY",
         "button_link": "shopify://collections/all",
         "label": "Select your current weight",
-        "result_label": "Weight you could loose (lb.) :",
+        "result_label": "Weight you could lose (lb.) :",
         "unit": "lb.",
         "min_weight": 210,
         "max_weight": 500,
@@ -348,8 +352,8 @@
       "settings": {
         "heading": "People love talking about NativeMed",
         "summary": "Rated <strong>4.8</strong> / 5 based on <a href=\"#\">225 reviews</a>. Showing our 4 & 5 star reviews.",
-        "show_logo": true,
-        "stars_alt": "5 out of 5 stars"
+        "stars_alt": "5 out of 5 stars",
+        "logo": "shopify://shop_images/nm-trustpilot.svg"
       }
     },
     "faq": {

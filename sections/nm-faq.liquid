@@ -1,3 +1,5 @@
+{{ 'nm-faq.css' | asset_url | stylesheet_tag }}
+
 <section class="nm nm-faq">
   <div class="nm-container">
     {%- if section.settings.pill != blank -%}
@@ -11,8 +13,8 @@
           <summary class="nm-faq__q">
             <span class="nm-faq__q-text">{{ block.settings.question | escape }}</span>
             <span class="nm-faq__icon" aria-hidden="true">
-              <img class="nm-faq__icon-closed" src="{{ 'nm-faq-closed.svg' | asset_url }}" alt="" width="35" height="35" loading="lazy">
-              <img class="nm-faq__icon-open" src="{{ 'nm-faq-open.svg' | asset_url }}" alt="" width="35" height="35" loading="lazy">
+              {%- render 'nm-icon', icon: 'faq-closed', class: 'nm-faq__icon-closed' -%}
+              {%- render 'nm-icon', icon: 'faq-open', class: 'nm-faq__icon-open' -%}
             </span>
           </summary>
           <div class="nm-faq__a">{{ block.settings.answer }}</div>

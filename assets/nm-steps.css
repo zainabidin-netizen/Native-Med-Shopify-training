@@ -1,0 +1,45 @@
+/* ==========================================================================
+   3 easy steps
+   ========================================================================== */
+.nm-steps { background: var(--nm-lilac); padding: 50px 0 46px; }
+.nm-steps .nm-h2 { max-width: 477px; margin: 0 auto; text-align: center; }
+.nm-steps__grid {
+  margin-top: 43px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 30px;
+}
+.nm-step { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.nm-step__media { position: relative; width: 100%; height: 359px; }
+.nm-step__bg {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 260px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(126, 76, 139, 0.3) 0%, rgba(186, 157, 194, 0.3) 100%);
+}
+.nm-step__img {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--nm-step-img-offset, 0px) * -1);
+  transform: translateX(-50%);
+  width: var(--nm-step-img-w, 206px);
+  max-width: 100%;
+}
+.nm-step__num {
+  margin-top: 15px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--nm-purple);
+  color: #fff;
+  font: 500 16px/26px var(--nm-font-display);
+}
+.nm-step__title {
+  margin-top: 10px;
+  font: 500 24px/35px var(--nm-font-display);
+  color: var(--nm-ink);
+}
+@media screen and (max-width: 749px) {
+  .nm-steps__grid { grid-template-columns: 1fr; row-gap: 40px; }
+}

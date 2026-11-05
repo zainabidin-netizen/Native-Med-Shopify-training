@@ -52,59 +52,10 @@
     },
     "nm-header": {
       "type": "nm-header",
-      "blocks": {
-        "nav-1": {
-          "type": "link",
-          "settings": {
-            "label": "Home",
-            "link": "/"
-          }
-        },
-        "nav-2": {
-          "type": "link",
-          "settings": {
-            "label": "Shop",
-            "link": "/collections/all"
-          }
-        },
-        "nav-3": {
-          "type": "link",
-          "settings": {
-            "label": "Blogs",
-            "link": "/blogs/news"
-          }
-        },
-        "nav-4": {
-          "type": "link",
-          "settings": {
-            "label": "About",
-            "link": "/pages/about"
-          }
-        },
-        "nav-5": {
-          "type": "link",
-          "settings": {
-            "label": "FAQ’s",
-            "link": "/pages/faq"
-          }
-        },
-        "nav-6": {
-          "type": "link",
-          "settings": {
-            "label": "Reviews",
-            "link": "/#nm-reviews"
-          }
-        }
-      },
-      "block_order": [
-        "nav-1",
-        "nav-2",
-        "nav-3",
-        "nav-4",
-        "nav-5",
-        "nav-6"
-      ],
-      "settings": {}
+      "settings": {
+        "logo": "shopify://shop_images/nm-logo.svg",
+        "menu": "nativemed-main-menu"
+      }
     }
   },
   "order": [

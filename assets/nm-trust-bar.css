@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Trust bar (marquee)
+   ========================================================================== */
+.nm-trust {
+  background: var(--nm-cream);
+  height: 70px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.nm-trust__track {
+  display: flex;
+  flex: none;
+  padding-left: 17px;
+  animation: nm-marquee var(--nm-marquee-duration, 40s) linear infinite;
+}
+.nm-trust:hover .nm-trust__track { animation-play-state: paused; }
+.nm-trust__group { display: flex; align-items: center; flex: none; }
+.nm-trust__item { display: flex; align-items: center; gap: 30px; padding-right: 30px; flex: none; }
+.nm-trust__item img { width: 45px; height: 45px; }
+.nm-trust__text {
+  font: 400 18px/1.13 var(--nm-font-body);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--nm-ink);
+}
+/* track = 17px lead + 2 identical groups; shift exactly one group for a seamless loop */
+@keyframes nm-marquee { to { transform: translateX(calc(-50% + 8.5px)); } }
+@media (prefers-reduced-motion: reduce) {
+  .nm-trust__track { animation: none; }
+}

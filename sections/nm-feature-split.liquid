@@ -1,10 +1,10 @@
+{{ 'nm-feature-split.css' | asset_url | stylesheet_tag }}
+
 <section class="nm nm-split nm-textured nm-textured--flip">
   <div class="nm-split__inner">
     <div class="nm-split__media{% if section.settings.mirror %} nm-split__media--mirror{% endif %}">
       {%- if section.settings.image != blank -%}
-        {{ section.settings.image | image_url: width: 1100 | image_tag: loading: 'lazy', widths: '550, 800, 1100', sizes: '(min-width: 990px) 550px, 100vw', alt: section.settings.image.alt }}
-      {%- else -%}
-        <img src="{{ 'nm-sustainable.png' | asset_url }}" alt="" width="550" height="550" loading="lazy">
+        {{ section.settings.image | image_url: width: 1100 | image_tag: loading: 'lazy', widths: '440, 550, 880, 1100', sizes: '(min-width: 990px) 550px, (min-width: 750px) 440px, 100vw', alt: section.settings.image.alt }}
       {%- endif -%}
     </div>
 
@@ -18,9 +18,7 @@
           <li class="nm-split__feature" {{ block.shopify_attributes }}>
             <span class="nm-split__icon">
               {%- if block.settings.icon != blank -%}
-                {{ block.settings.icon | image_url: width: 60 | image_tag: width: 30, height: 30, alt: '' }}
-              {%- else -%}
-                <img src="{{ block.settings.icon_default | append: '.svg' | asset_url }}" alt="" width="30" height="30" loading="lazy">
+                {{ block.settings.icon | image_url: width: 60 | image_tag: width: 30, height: 30, alt: '', loading: 'lazy' }}
               {%- endif -%}
             </span>
             <span class="nm-split__feature-text">{{ block.settings.text | escape }}</span>
@@ -57,19 +55,7 @@
       "type": "feature",
       "name": "Feature",
       "settings": [
-        { "type": "image_picker", "id": "icon", "label": "Custom icon" },
-        {
-          "type": "select",
-          "id": "icon_default",
-          "label": "Icon",
-          "options": [
-            { "value": "nm-feat-delivery", "label": "Delivery truck" },
-            { "value": "nm-feat-consult", "label": "Consultation" },
-            { "value": "nm-feat-certificate", "label": "Certificate" },
-            { "value": "nm-feat-stamp", "label": "Stamp" }
-          ],
-          "default": "nm-feat-delivery"
-        },
+        { "type": "image_picker", "id": "icon", "label": "Icon" },
         { "type": "text", "id": "text", "label": "Text", "default": "Feature" }
       ]
     }

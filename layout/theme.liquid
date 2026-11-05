@@ -220,21 +220,35 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
 
-    {%- comment -%} NativeMed design layer: Satoshi (self-hosted, ITF FFL) + Inter {%- endcomment -%}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;1,700&display=swap" rel="stylesheet">
-    <link rel="preload" as="font" href="{{ 'nm-satoshi-regular.woff2' | asset_url }}" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="{{ 'nm-satoshi-medium-italic.woff2' | asset_url }}" type="font/woff2" crossorigin>
+    {%- comment -%}
+      NativeMed design layer: Satoshi (self-hosted, ITF FFL) + body font from Shopify's font library.
+      Only shared styles load here; each nm-* section loads its own CSS/JS.
+    {%- endcomment -%}
+    {%- liquid
+      assign nm_font = settings.nm_body_font
+      assign nm_font_500 = nm_font | font_modify: 'weight', '500'
+      assign nm_font_700 = nm_font | font_modify: 'weight', '700'
+      assign nm_font_700_italic = nm_font_700 | font_modify: 'style', 'italic'
+    -%}
+    {{ 'nm-satoshi-regular.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+    {{ 'nm-satoshi-medium-italic.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
     <style>
       @font-face { font-family: 'Satoshi'; font-weight: 400; font-style: normal; font-display: swap; src: url('{{ 'nm-satoshi-regular.woff2' | asset_url }}') format('woff2'); }
       @font-face { font-family: 'Satoshi'; font-weight: 400; font-style: italic; font-display: swap; src: url('{{ 'nm-satoshi-italic.woff2' | asset_url }}') format('woff2'); }
       @font-face { font-family: 'Satoshi'; font-weight: 500; font-style: normal; font-display: swap; src: url('{{ 'nm-satoshi-medium.woff2' | asset_url }}') format('woff2'); }
       @font-face { font-family: 'Satoshi'; font-weight: 500; font-style: italic; font-display: swap; src: url('{{ 'nm-satoshi-medium-italic.woff2' | asset_url }}') format('woff2'); }
-      :root { --nm-texture: url('{{ 'nm-texture.jpg' | asset_url }}'); }
+      {{ nm_font | font_face: font_display: 'swap' }}
+      {{ nm_font_500 | font_face: font_display: 'swap' }}
+      {{ nm_font_700 | font_face: font_display: 'swap' }}
+      {{ nm_font_700_italic | font_face: font_display: 'swap' }}
+      :root {
+        --nm-font-body: {{ nm_font.family }}, {{ nm_font.fallback_families }};
+        {%- if settings.nm_texture != blank %}
+        --nm-texture: url('{{ settings.nm_texture | image_url: width: 1800 }}');
+        {%- endif %}
+      }
     </style>
     {{ 'nm-theme.css' | asset_url | stylesheet_tag }}
-    <script src="{{ 'nm-theme.js' | asset_url }}" defer="defer"></script>
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>

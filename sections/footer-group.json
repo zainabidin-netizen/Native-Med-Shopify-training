@@ -82,11 +82,12 @@
         "col-3"
       ],
       "settings": {
+        "logo": "shopify://shop_images/nm-logo.svg",
         "tagline": "No Diet. No Exercise. | Ditch The Weight, Gain Control.",
-        "show_legitscript": true,
+        "legitscript_image": "shopify://shop_images/nm-legitscript.png",
         "legitscript_domain": "NATIVEMED.NET",
         "legitscript_date": "08/28/24",
-        "show_hipaa": true,
+        "hipaa_image": "shopify://shop_images/nm-hipaa.svg",
         "copyright": "© 2024 NativeMed"
       }
     }

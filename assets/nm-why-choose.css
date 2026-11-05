@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Why choose
+   ========================================================================== */
+.nm-why { background: #fff; padding: 50px 0 70px; }
+.nm-why .nm-h2 { text-align: center; }
+.nm-why__grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+}
+.nm-why__card {
+  min-height: 231px;
+  padding: 25px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  background: var(--nm-cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.nm-why__card img { width: 55px; height: 55px; }
+.nm-why__title { margin-top: 25px; font: 500 24px/35px var(--nm-font-display); color: var(--nm-ink); }
+.nm-why__text { margin-top: 10px; max-width: 271px; font: 400 16px/27px var(--nm-font-body); color: var(--nm-ink); }
+@media screen and (max-width: 989px) {
+  .nm-why__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+}
+@media screen and (max-width: 549px) {
+  .nm-why__grid { grid-template-columns: 1fr; }
+}

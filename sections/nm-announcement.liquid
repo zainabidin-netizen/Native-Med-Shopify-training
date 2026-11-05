@@ -1,7 +1,7 @@
 <div class="nm nm-announcement">
   <div class="nm-announcement__inner">
     {%- if section.settings.show_icon -%}
-      <img class="nm-announcement__icon" src="{{ 'nm-icon-gift.svg' | asset_url }}" alt="" width="16" height="16">
+      {%- render 'nm-icon', icon: 'gift', class: 'nm-announcement__icon' -%}
     {%- endif -%}
     <p class="nm-announcement__text">
       {%- if section.settings.link != blank -%}<a href="{{ section.settings.link }}">{%- endif -%}

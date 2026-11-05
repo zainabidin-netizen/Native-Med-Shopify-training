@@ -1,3 +1,5 @@
+{{ 'nm-why-choose.css' | asset_url | stylesheet_tag }}
+
 <section class="nm nm-why">
   <div class="nm-container">
     <h2 class="nm-h2">{{ section.settings.heading | replace: ' | ', ' <br>' }}</h2>
@@ -5,9 +7,7 @@
       {%- for block in section.blocks -%}
         <li class="nm-why__card" {{ block.shopify_attributes }}>
           {%- if block.settings.icon != blank -%}
-            {{ block.settings.icon | image_url: width: 110 | image_tag: width: 55, height: 55, alt: '' }}
-          {%- else -%}
-            <img src="{{ block.settings.icon_default | append: '.svg' | asset_url }}" alt="" width="55" height="55" loading="lazy">
+            {{ block.settings.icon | image_url: width: 110 | image_tag: width: 55, height: 55, alt: '', loading: 'lazy' }}
           {%- endif -%}
           <h3 class="nm-why__title">{{ block.settings.title | escape }}</h3>
           <p class="nm-why__text">{{ block.settings.text | escape | replace: ' | ', ' <br>' }}</p>
@@ -35,19 +35,7 @@
       "type": "reason",
       "name": "Reason",
       "settings": [
-        { "type": "image_picker", "id": "icon", "label": "Custom icon" },
-        {
-          "type": "select",
-          "id": "icon_default",
-          "label": "Icon",
-          "options": [
-            { "value": "nm-why-1", "label": "Globe" },
-            { "value": "nm-why-2", "label": "Thumbs up" },
-            { "value": "nm-why-3", "label": "Heart in hand" },
-            { "value": "nm-why-4", "label": "Wallet" }
-          ],
-          "default": "nm-why-1"
-        },
+        { "type": "image_picker", "id": "icon", "label": "Icon" },
         { "type": "text", "id": "title", "label": "Title", "default": "Reason" },
         { "type": "text", "id": "text", "label": "Text", "info": "Use \" | \" for a line break." }
       ]

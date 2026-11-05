@@ -6,7 +6,7 @@
         {%- if s.logo != blank -%}
           {{ s.logo | image_url: width: 260 | image_tag: width: 130, alt: shop.name, loading: 'lazy' }}
         {%- else -%}
-          <img src="{{ 'nm-logo.svg' | asset_url }}" alt="{{ shop.name | escape }}" width="130" height="80" loading="lazy">
+          <span class="nm-footer__logo-text">{{ shop.name | escape }}</span>
         {%- endif -%}
       </a>
       {%- if s.tagline != blank -%}
@@ -14,15 +14,15 @@
       {%- endif -%}
       <div class="nm-footer__rule" role="presentation"></div>
       <div class="nm-footer__badges">
-        {%- if s.show_legitscript -%}
+        {%- if s.legitscript_image != blank -%}
           <a class="nm-legit" href="{{ s.legitscript_url | default: '#' }}" target="_blank" rel="noopener" aria-label="LegitScript certified {{ s.legitscript_domain | escape }}">
-            <img src="{{ 'nm-legitscript.png' | asset_url }}" alt="" width="111" height="116" loading="lazy">
+            {{ s.legitscript_image | image_url: width: 333 | image_tag: width: 111, alt: '', loading: 'lazy' }}
             <span class="nm-legit__domain">{{ s.legitscript_domain | escape }}</span>
             <span class="nm-legit__date">{{ s.legitscript_date | escape }}</span>
           </a>
         {%- endif -%}
-        {%- if s.show_hipaa -%}
-          <img class="nm-footer__hipaa" src="{{ 'nm-hipaa.svg' | asset_url }}" alt="HIPAA compliant" width="129" height="70" loading="lazy">
+        {%- if s.hipaa_image != blank -%}
+          {{ s.hipaa_image | image_url: width: 387 | image_tag: class: 'nm-footer__hipaa', width: 129, alt: s.hipaa_image.alt, loading: 'lazy' }}
         {%- endif -%}
       </div>
     </div>
@@ -52,7 +52,7 @@
               <p class="nm-footer__heading">{{ block.settings.heading | escape }}</p>
               {%- if block.settings.phone != blank -%}
                 <p class="nm-footer__phone nm-footer__text">
-                  <img src="{{ 'nm-icon-phone.svg' | asset_url }}" alt="" width="24" height="24" loading="lazy">
+                  {%- render 'nm-icon', icon: 'phone' -%}
                   <a href="tel:{{ block.settings.phone | remove: ' ' | remove: '(' | remove: ')' | remove: '-' }}">{{ block.settings.phone | escape }}</a>
                 </p>
               {%- endif -%}
@@ -61,13 +61,13 @@
               {%- endif -%}
               <div class="nm-footer__social">
                 {%- if block.settings.facebook != blank -%}
-                  <a href="{{ block.settings.facebook }}" target="_blank" rel="noopener" aria-label="Facebook"><img src="{{ 'nm-social-facebook.svg' | asset_url }}" alt="" width="11" height="16.5" loading="lazy"></a>
+                  <a href="{{ block.settings.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">{%- render 'nm-icon', icon: 'facebook' -%}</a>
                 {%- endif -%}
                 {%- if block.settings.instagram != blank -%}
-                  <a href="{{ block.settings.instagram }}" target="_blank" rel="noopener" aria-label="Instagram"><img src="{{ 'nm-social-instagram.svg' | asset_url }}" alt="" width="18.3" height="18.3" loading="lazy"></a>
+                  <a href="{{ block.settings.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">{%- render 'nm-icon', icon: 'instagram' -%}</a>
                 {%- endif -%}
                 {%- if block.settings.tiktok != blank -%}
-                  <a href="{{ block.settings.tiktok }}" target="_blank" rel="noopener" aria-label="TikTok"><img src="{{ 'nm-social-tiktok.svg' | asset_url }}" alt="" width="14.7" height="16.5" loading="lazy"></a>
+                  <a href="{{ block.settings.tiktok }}" target="_blank" rel="noopener" aria-label="TikTok">{%- render 'nm-icon', icon: 'tiktok' -%}</a>
                 {%- endif -%}
               </div>
           {%- endcase -%}
@@ -89,13 +89,13 @@
   "class": "nm-section-footer",
   "max_blocks": 4,
   "settings": [
-    { "type": "image_picker", "id": "logo", "label": "Logo", "info": "Leave empty to use the NativeMed logo." },
+    { "type": "image_picker", "id": "logo", "label": "Logo" },
     { "type": "text", "id": "tagline", "label": "Tagline", "info": "Use \" | \" for a line break.", "default": "No Diet. No Exercise. | Ditch The Weight, Gain Control." },
-    { "type": "checkbox", "id": "show_legitscript", "label": "Show LegitScript badge", "default": true },
+    { "type": "image_picker", "id": "legitscript_image", "label": "LegitScript badge" },
     { "type": "text", "id": "legitscript_domain", "label": "LegitScript domain", "default": "NATIVEMED.NET" },
     { "type": "text", "id": "legitscript_date", "label": "LegitScript date", "default": "08/28/24" },
     { "type": "url", "id": "legitscript_url", "label": "LegitScript verification link" },
-    { "type": "checkbox", "id": "show_hipaa", "label": "Show HIPAA badge", "default": true },
+    { "type": "image_picker", "id": "hipaa_image", "label": "HIPAA badge" },
     { "type": "text", "id": "copyright", "label": "Copyright", "default": "© 2024 NativeMed" }
   ],
   "blocks": [

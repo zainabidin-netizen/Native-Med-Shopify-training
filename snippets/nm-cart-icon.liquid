@@ -2,7 +2,7 @@
   Inner markup of the header cart link (#cart-icon-bubble).
   Also rendered by sections/cart-icon-bubble.liquid so the cart drawer can refresh the count.
 {%- endcomment -%}
-<img src="{{ 'nm-icon-bag.svg' | asset_url }}" alt="" width="25" height="25" loading="eager">
+{%- render 'nm-icon', icon: 'bag' -%}
 <span class="nm-visually-hidden">{{ 'templates.cart.cart' | t }}</span>
 {%- if cart.item_count > 0 -%}
   <span class="nm-cart-count" aria-hidden="true">{% if cart.item_count < 100 %}{{ cart.item_count }}{% else %}99+{% endif %}</span>
