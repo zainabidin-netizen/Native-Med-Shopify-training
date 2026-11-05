@@ -1,0 +1,73 @@
+{%- liquid
+  assign overlay = section.settings.overlay_opacity | divided_by: 100.0
+-%}
+<section class="nm nm-hero" style="--nm-hero-overlay: {{ overlay }};">
+  <div class="nm-hero__media">
+    {%- if section.settings.image != blank -%}
+      {{ section.settings.image | image_url: width: 2902 | image_tag: loading: 'eager', fetchpriority: 'high', sizes: '100vw', widths: '750, 1100, 1500, 2000, 2902', alt: section.settings.image.alt }}
+    {%- else -%}
+      <img src="{{ 'nm-hero-bg.jpg' | asset_url }}" alt="" width="2902" height="1935" loading="eager" fetchpriority="high">
+    {%- endif -%}
+  </div>
+  <div class="nm-hero__overlay"></div>
+  <div class="nm-hero__texture"></div>
+
+  {%- if section.settings.show_float -%}
+    {%- if section.settings.float_image != blank -%}
+      {{ section.settings.float_image | image_url: width: 600 | image_tag: class: 'nm-hero__float', width: 218, alt: '' }}
+    {%- else -%}
+      <img class="nm-hero__float" src="{{ 'nm-hero-bottle.png' | asset_url }}" alt="" width="218" height="218">
+    {%- endif -%}
+  {%- endif -%}
+
+  <div class="nm-hero__content">
+    {%- if section.settings.badge != blank -%}
+      <p class="nm-pill nm-hero__badge">{{ section.settings.badge | escape }}</p>
+    {%- endif -%}
+    <h1 class="nm-hero__title">{{ section.settings.heading | replace: ' | ', ' <br>' }}</h1>
+    {%- if section.settings.text != blank -%}
+      <p class="nm-hero__text">{{ section.settings.text | escape }}</p>
+    {%- endif -%}
+    {%- if section.settings.button_label != blank -%}
+      <a class="nm-btn nm-btn--primary nm-hero__btn" href="{{ section.settings.button_link | default: '#' }}">{{ section.settings.button_label | escape }}</a>
+    {%- endif -%}
+    {%- if section.settings.rating_text != blank -%}
+      <div class="nm-hero__rating">
+        <img src="{{ 'nm-hero-stars.svg' | asset_url }}" alt="{{ section.settings.rating_alt | escape }}" width="109" height="23">
+        <p>{{ section.settings.rating_text }}</p>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NM Hero",
+  "class": "nm-section-hero",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Background image", "info": "Leave empty to use the design photo." },
+    { "type": "range", "id": "overlay_opacity", "label": "Overlay opacity", "min": 0, "max": 90, "step": 5, "unit": "%", "default": 40 },
+    { "type": "checkbox", "id": "show_float", "label": "Show floating product", "default": true },
+    { "type": "image_picker", "id": "float_image", "label": "Floating product image" },
+    { "type": "text", "id": "badge", "label": "Badge", "default": "#1 WEIGHT LOSS PROGRAM" },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Italic text is highlighted in purple. Use \" | \" for a line break.",
+      "default": "Weight Loss | Backed By <em>Science</em>"
+    },
+    { "type": "text", "id": "text", "label": "Text", "default": "No Diet. No Exercise.Ditch The Weight, Gain Control." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "GET QUALIFIED TODAY" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    {
+      "type": "inline_richtext",
+      "id": "rating_text",
+      "label": "Rating text",
+      "default": "Rated 4.8/5.0 (<a href=\"#nm-reviews\">Over 20,000 happy customers</a>)"
+    },
+    { "type": "text", "id": "rating_alt", "label": "Stars alt text", "default": "Rated 5 out of 5 stars" }
+  ],
+  "presets": [{ "name": "NM Hero" }]
+}
+{% endschema %}
