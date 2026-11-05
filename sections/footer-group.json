@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -44,55 +53,10 @@
         "margin_top": 48,
         "padding_top": 36,
         "padding_bottom": 36
-      },
-      "disabled": true
-    },
-    "nm-footer": {
-      "type": "nm-footer",
-      "blocks": {
-        "col-1": {
-          "type": "links",
-          "settings": {
-            "heading": "Quick Links",
-            "fallback_links": "Terms of Use|/policies/terms-of-service\nRefund Policy|/policies/refund-policy\nConsent to Telehealth|/pages/consent-to-telehealth\nPrivacy policy|/policies/privacy-policy\nNotice of Privacy|/pages/notice-of-privacy\nTerms & Conditions|/policies/terms-of-service"
-          }
-        },
-        "col-2": {
-          "type": "links",
-          "settings": {
-            "heading": "Popular",
-            "fallback_links": "Pharmacy Providers|/pages/pharmacy-providers\nPrescribers|/pages/prescribers\nReviews|/#nm-reviews"
-          }
-        },
-        "col-3": {
-          "type": "contact",
-          "settings": {
-            "heading": "Get in touch",
-            "phone": "+1 (833) 850-8585",
-            "follow_label": "Follow Us:",
-            "facebook": "https://www.facebook.com/",
-            "instagram": "https://www.instagram.com/",
-            "tiktok": "https://www.tiktok.com/"
-          }
-        }
-      },
-      "block_order": [
-        "col-1",
-        "col-2",
-        "col-3"
-      ],
-      "settings": {
-        "tagline": "No Diet. No Exercise. | Ditch The Weight, Gain Control.",
-        "show_legitscript": true,
-        "legitscript_domain": "NATIVEMED.NET",
-        "legitscript_date": "08/28/24",
-        "show_hipaa": true,
-        "copyright": "© 2024 NativeMed"
       }
     }
   },
   "order": [
-    "footer",
-    "nm-footer"
+    "footer"
   ]
 }

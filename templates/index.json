@@ -1,432 +1,173 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "hero": {
-      "type": "nm-hero",
-      "settings": {
-        "overlay_opacity": 40,
-        "show_float": true,
-        "badge": "#1 WEIGHT LOSS PROGRAM",
-        "heading": "Weight Loss | Backed By <em>Science</em>",
-        "text": "No Diet. No Exercise.Ditch The Weight, Gain Control.",
-        "button_label": "GET QUALIFIED TODAY",
-        "button_link": "shopify://collections/all",
-        "rating_text": "Rated 4.8/5.0 (<a href=\"#nm-reviews\">Over 20,000 happy customers</a>)",
-        "rating_alt": "Rated 5 out of 5 stars"
-      }
-    },
-    "trust": {
-      "type": "nm-trust-bar",
+    "6a3bb789-ce10-45f5-ae67-e2063ef8c76b": {
+      "type": "image-banner",
       "blocks": {
-        "trust-1": {
-          "type": "item",
+        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-0": {
+          "type": "heading",
           "settings": {
-            "icon_default": "nm-trust-medal",
-            "text": "US-licensed healthcare providers"
+            "heading": "Generated test data",
+            "heading_size": "h1"
           }
         },
-        "trust-2": {
-          "type": "item",
+        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-1": {
+          "type": "text",
           "settings": {
-            "icon_default": "nm-trust-consult",
-            "text": "Free online consultation"
+            "text": "A theme and populated test store by Shopify to help you test commerce primitives.",
+            "text_style": "body"
           }
         },
-        "trust-3": {
-          "type": "item",
+        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-2": {
+          "type": "buttons",
           "settings": {
-            "icon_default": "nm-trust-delivery",
-            "text": "Free, discreet shipping"
-          }
-        },
-        "trust-4": {
-          "type": "item",
-          "settings": {
-            "icon_default": "nm-trust-approve",
-            "text": "FDA-approved pharmacies"
+            "button_label_1": "Shop products",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
       "block_order": [
-        "trust-1",
-        "trust-2",
-        "trust-3",
-        "trust-4"
+        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-0",
+        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-1",
+        "template--18309637636369__6a3bb789-ce10-45f5-ae67-e2063ef8c76b-168016437761699a6e-2"
       ],
+      "custom_css": [],
       "settings": {
-        "label": "Why patients trust NativeMed",
-        "duration": 40
+        "image": "shopify://shop_images/theme_cover_image.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-left",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
-    "products": {
-      "type": "nm-product-cards",
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>Featured products</strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "automated-collection",
+        "products_to_show": 10,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "f1552b18-6017-4231-810d-74e61da22c37": {
+      "type": "image-with-text",
       "blocks": {
-        "card-1": {
-          "type": "card",
+        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-0": {
+          "type": "heading",
           "settings": {
-            "title": "Tirzepatide | Injection Home Kit",
-            "featured": true,
-            "badge": "In Stock",
-            "badge_style": "green",
-            "description": "The same active ingredient in Mounjaro® and Zepbound™*",
-            "price_text": "Price: $279",
-            "image_default": "nm-product-tirzepatide",
-            "image_width": 215,
-            "image_offset": 0,
-            "button_label": "GET STARTED",
-            "button_link": "shopify://collections/all",
-            "disabled": false,
-            "title_width": 300
+            "heading": "Stay hydrated",
+            "heading_size": "h1"
           }
         },
-        "card-2": {
-          "type": "card",
+        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-1": {
+          "type": "text",
           "settings": {
-            "title": "Semaglutide | Injection Home Kit",
-            "featured": false,
-            "badge": "In stock",
-            "badge_style": "white",
-            "description": "The same active ingredient in Ozempic® and Wegovy®",
-            "price_text": "Price: $169",
-            "image_default": "nm-product-semaglutide",
-            "image_width": 215,
-            "image_offset": 0,
-            "button_label": "GET STARTED",
-            "button_link": "shopify://collections/all",
-            "disabled": false,
-            "title_width": 300
+            "text": "<p>Try our wax subscription so you can fly high, but never dry.</p>",
+            "text_style": "body"
           }
         },
-        "card-3": {
-          "type": "card",
+        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-2": {
+          "type": "button",
           "settings": {
-            "title": "Generic for | Viagra® (Sildenafil)",
-            "featured": false,
-            "badge": "Coming Soon",
-            "badge_style": "amber",
-            "description": "The powerful and affordable generic form of Viagra",
-            "price_text": "Price: $",
-            "image_default": "nm-product-sildenafil",
-            "image_width": 286,
-            "image_offset": 10,
-            "button_label": "COMING SOON",
-            "disabled": true,
-            "title_width": 300
-          }
-        },
-        "card-4": {
-          "type": "card",
-          "settings": {
-            "title": "Generic for | Oleptro® (Trazodone)",
-            "featured": false,
-            "badge": "Sold Out",
-            "badge_style": "red",
-            "description": "Reduce the number of awakenings per night.",
-            "price_text": "Price: $",
-            "image_default": "nm-product-trazodone",
-            "image_width": 263,
-            "image_offset": 4,
-            "button_label": "SOLD OUT",
-            "disabled": true,
-            "title_width": 300
+            "button_label": "Get waxy now",
+            "button_link": "shopify://products/selling-plans-ski-wax"
           }
         }
       },
       "block_order": [
-        "card-1",
-        "card-2",
-        "card-3",
-        "card-4"
+        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-0",
+        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-1",
+        "template--18309637636369__f1552b18-6017-4231-810d-74e61da22c37-1680164422d7fb2efc-2"
       ],
       "settings": {
-        "heading": "Recognizing | Your <em>Uniqueness</em>",
-        "text": "We prioritize convenience and affordability, guaranteeing easy access to top-quality care that's always within your reach."
+        "image": "shopify://shop_images/theme_cover_image.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "accent-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
-    "steps": {
-      "type": "nm-steps",
+    "38cdf60f-e431-43b5-aac3-7e6215447d67": {
+      "type": "collection-list",
       "blocks": {
-        "step-1": {
-          "type": "step",
+        "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-0": {
+          "type": "featured_collection",
           "settings": {
-            "title": "Online Medical Form",
-            "image_default": "nm-step-1",
-            "image_width": 206,
-            "image_offset": 0
+            "collection": "hydrogen"
           }
         },
-        "step-2": {
-          "type": "step",
+        "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-1": {
+          "type": "featured_collection",
           "settings": {
-            "title": "Telehealth Call",
-            "image_default": "nm-step-2",
-            "image_width": 206,
-            "image_offset": 0
-          }
-        },
-        "step-3": {
-          "type": "step",
-          "settings": {
-            "title": "Receive Medication",
-            "image_default": "nm-step-3",
-            "image_width": 368,
-            "image_offset": 11
+            "collection": "automated-collection"
           }
         }
       },
       "block_order": [
-        "step-1",
-        "step-2",
-        "step-3"
+        "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-0",
+        "template--18309637636369__38cdf60f-e431-43b5-aac3-7e6215447d67-1680164898782d94ce-1"
       ],
       "settings": {
-        "heading": "Start Losing Weight In | <em>3-Easy Steps</em>"
-      }
-    },
-    "why": {
-      "type": "nm-why-choose",
-      "blocks": {
-        "why-1": {
-          "type": "reason",
-          "settings": {
-            "icon_default": "nm-why-1",
-            "title": "Appetite Suppression",
-            "text": "Known for its effective hunger craving reduction"
-          }
-        },
-        "why-2": {
-          "type": "reason",
-          "settings": {
-            "icon_default": "nm-why-2",
-            "title": "Improves Health",
-            "text": "Incorporating nutrition, physical activity and mental well-being"
-          }
-        },
-        "why-3": {
-          "type": "reason",
-          "settings": {
-            "icon_default": "nm-why-3",
-            "title": "Lose Weight",
-            "text": "Begin your transformation, shedding 23% of weight in no time"
-          }
-        },
-        "why-4": {
-          "type": "reason",
-          "settings": {
-            "icon_default": "nm-why-4",
-            "title": "No Hidden Fees",
-            "text": "Includes Provider & Medication | No Fees – No Insurance Needed"
-          }
-        }
-      },
-      "block_order": [
-        "why-1",
-        "why-2",
-        "why-3",
-        "why-4"
-      ],
-      "settings": {
-        "heading": "Why Choose <em>Nativemed</em>"
-      }
-    },
-    "split": {
-      "type": "nm-feature-split",
-      "blocks": {
-        "feat-1": {
-          "type": "feature",
-          "settings": {
-            "icon_default": "nm-feat-delivery",
-            "text": "Free, discreet shipping"
-          }
-        },
-        "feat-2": {
-          "type": "feature",
-          "settings": {
-            "icon_default": "nm-feat-consult",
-            "text": "Free online consultation"
-          }
-        },
-        "feat-3": {
-          "type": "feature",
-          "settings": {
-            "icon_default": "nm-feat-certificate",
-            "text": "US-licensed healthcare providers"
-          }
-        },
-        "feat-4": {
-          "type": "feature",
-          "settings": {
-            "icon_default": "nm-feat-stamp",
-            "text": "FDA-approved pharmacies"
-          }
-        }
-      },
-      "block_order": [
-        "feat-1",
-        "feat-2",
-        "feat-3",
-        "feat-4"
-      ],
-      "settings": {
-        "mirror": true,
-        "pill": "Popular",
-        "heading": "Sustainable <em>Weight</em> | <em>Loss</em> Based On Biology",
-        "button_label": "GET STARTED",
-        "button_link": "shopify://collections/all"
-      }
-    },
-    "calculator": {
-      "type": "nm-weight-calculator",
-      "settings": {
-        "heading": "How Much Weight Could | You <em>Loose</em> With <em>Nativemed</em>?",
-        "button_label": "GET QUALIFIED TODAY",
-        "button_link": "shopify://collections/all",
-        "label": "Select your current weight",
-        "result_label": "Weight you could loose (lb.) :",
-        "unit": "lb.",
-        "min_weight": 210,
-        "max_weight": 500,
-        "start_weight": 242,
-        "percent": 20
-      }
-    },
-    "reviews": {
-      "type": "nm-reviews",
-      "blocks": {
-        "review-1": {
-          "type": "review",
-          "settings": {
-            "title": "This is the best thing I have ever down",
-            "body": "This is the best thing I have ever down. I am down 38 lbs in one year and feel fabulo...",
-            "author": "Elaine Meyer",
-            "date": "12 hours ago"
-          }
-        },
-        "review-2": {
-          "type": "review",
-          "settings": {
-            "title": "Love nativemeds",
-            "body": "Love nativemeds! They respond to my questions asap! I have used them since April 2024...",
-            "author": "Kayla Hewitt",
-            "date": "1 day ago"
-          }
-        },
-        "review-3": {
-          "type": "review",
-          "settings": {
-            "title": "Easy and simple set up process",
-            "body": "Easy and simple set up process",
-            "author": "Anna Gray",
-            "date": "3 days ago"
-          }
-        },
-        "review-4": {
-          "type": "review",
-          "settings": {
-            "title": "The product performed exactly as promised",
-            "body": "The product performed exactly as promised. The staff was kind understanding well-trai...",
-            "author": "Al",
-            "date": "3 days ago"
-          }
-        },
-        "review-5": {
-          "type": "review",
-          "settings": {
-            "title": "Great online telehealth visit and customer service",
-            "body": "Great online telehealth visit and customer service afterwards getting the onboarding...",
-            "author": "Scott",
-            "date": "4 days ago"
-          }
-        }
-      },
-      "block_order": [
-        "review-1",
-        "review-2",
-        "review-3",
-        "review-4",
-        "review-5"
-      ],
-      "settings": {
-        "heading": "People love talking about NativeMed",
-        "summary": "Rated <strong>4.8</strong> / 5 based on <a href=\"#\">225 reviews</a>. Showing our 4 & 5 star reviews.",
-        "show_logo": true,
-        "stars_alt": "5 out of 5 stars"
-      }
-    },
-    "faq": {
-      "type": "nm-faq",
-      "blocks": {
-        "faq-1": {
-          "type": "question",
-          "settings": {
-            "question": "How does it work?",
-            "answer": "<p>NativeMed aims to go beyond being a typical Telehealth platform while keeping it simple for our clients. Our treatment process consists of three straightforward steps:</p><ol><li>Fill out our patient questionnaire.</li><li>Connect with your healthcare provider via a Telehealth appointment.</li><li>Receive prescribed medication overnight from a pharmacy provider.</li></ol>",
-            "open": true
-          }
-        },
-        "faq-2": {
-          "type": "question",
-          "settings": {
-            "question": "How long does medication take to ship?",
-            "answer": "<p>Once your provider approves your prescription, medication ships overnight from a licensed pharmacy partner.</p>",
-            "open": false
-          }
-        },
-        "faq-3": {
-          "type": "question",
-          "settings": {
-            "question": "Do you accept insurance?",
-            "answer": "<p>Our pricing includes provider and medication with no hidden fees, so no insurance is needed.</p>",
-            "open": false
-          }
-        },
-        "faq-4": {
-          "type": "question",
-          "settings": {
-            "question": "Are these products safe?",
-            "answer": "<p>All medications are prescribed by US-licensed healthcare providers and dispensed by FDA-approved pharmacies.</p>",
-            "open": false
-          }
-        },
-        "faq-5": {
-          "type": "question",
-          "settings": {
-            "question": "Can I cancel at anytime?",
-            "answer": "<p>Yes. You can cancel your plan at any time.</p>",
-            "open": false
-          }
-        },
-        "faq-6": {
-          "type": "question",
-          "settings": {
-            "question": "What does the weight loss program include?",
-            "answer": "<p>Your program includes an online consultation, ongoing provider support, and your prescribed medication delivered to your door.</p>",
-            "open": false
-          }
-        }
-      },
-      "block_order": [
-        "faq-1",
-        "faq-2",
-        "faq-3",
-        "faq-4",
-        "faq-5",
-        "faq-6"
-      ],
-      "settings": {
-        "pill": "FREQUENTLY ASKED QUESTIONS",
-        "heading": "Your Questions, <em>Answered.</em>"
+        "title": "<strong>Collections</strong>",
+        "heading_size": "h1",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "color_scheme": "background-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "hero",
-    "trust",
-    "products",
-    "steps",
-    "why",
-    "split",
-    "calculator",
-    "reviews",
-    "faq"
+    "6a3bb789-ce10-45f5-ae67-e2063ef8c76b",
+    "featured_collection",
+    "f1552b18-6017-4231-810d-74e61da22c37",
+    "38cdf60f-e431-43b5-aac3-7e6215447d67"
   ]
 }

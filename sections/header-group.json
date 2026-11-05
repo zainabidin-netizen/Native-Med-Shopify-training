@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -39,78 +48,11 @@
         "margin_bottom": 0,
         "padding_top": 8,
         "padding_bottom": 8
-      },
-      "disabled": true
-    },
-    "nm-announcement": {
-      "type": "nm-announcement",
-      "settings": {
-        "text": "Summer Savings: Semaglutide for Just <strong>$169/mo</strong>. Any Dose!",
-        "link": "",
-        "show_icon": true
       }
-    },
-    "nm-header": {
-      "type": "nm-header",
-      "blocks": {
-        "nav-1": {
-          "type": "link",
-          "settings": {
-            "label": "Home",
-            "link": "/"
-          }
-        },
-        "nav-2": {
-          "type": "link",
-          "settings": {
-            "label": "Shop",
-            "link": "/collections/all"
-          }
-        },
-        "nav-3": {
-          "type": "link",
-          "settings": {
-            "label": "Blogs",
-            "link": "/blogs/news"
-          }
-        },
-        "nav-4": {
-          "type": "link",
-          "settings": {
-            "label": "About",
-            "link": "/pages/about"
-          }
-        },
-        "nav-5": {
-          "type": "link",
-          "settings": {
-            "label": "FAQ’s",
-            "link": "/pages/faq"
-          }
-        },
-        "nav-6": {
-          "type": "link",
-          "settings": {
-            "label": "Reviews",
-            "link": "/#nm-reviews"
-          }
-        }
-      },
-      "block_order": [
-        "nav-1",
-        "nav-2",
-        "nav-3",
-        "nav-4",
-        "nav-5",
-        "nav-6"
-      ],
-      "settings": {}
     }
   },
   "order": [
     "announcement-bar",
-    "header",
-    "nm-announcement",
-    "nm-header"
+    "header"
   ]
 }
