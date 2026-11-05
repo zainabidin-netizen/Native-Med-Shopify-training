@@ -1,0 +1,143 @@
+<section class="nm nm-products" data-nm-products>
+  <div class="nm-container nm-products__intro">
+    <h2 class="nm-h2">{{ section.settings.heading | replace: ' | ', ' <br>' }}</h2>
+    {%- if section.settings.text != blank -%}
+      <p class="nm-products__lead">{{ section.settings.text | escape }}</p>
+    {%- endif -%}
+  </div>
+
+  <div class="nm-products__slider">
+    <ul class="nm-products__track" data-nm-track>
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign p = block.settings.product
+          assign title = block.settings.title
+          if title == blank and p != blank
+            assign title = p.title
+          endif
+          assign url = block.settings.button_link
+          if url == blank and p != blank
+            assign url = p.url
+          endif
+          assign price_text = block.settings.price_text
+          if price_text == blank and p != blank
+            capture price_text
+              echo 'Price: '
+              echo p.price | money
+            endcapture
+          endif
+          assign btn_class = 'nm-btn--outline'
+          if block.settings.featured
+            assign btn_class = 'nm-btn--white'
+          endif
+        -%}
+        <li class="nm-card{% if block.settings.featured %} nm-card--featured{% endif %}" style="--nm-card-title-w: {{ block.settings.title_width }}px; --nm-card-img-w: {{ block.settings.image_width }}px; --nm-card-media-gap: {{ block.settings.image_offset }}px;" {{ block.shopify_attributes }}>
+          <h3 class="nm-card__title">{{ title | escape | replace: ' | ', ' <br>' }}</h3>
+          {%- if block.settings.badge != blank -%}
+            <span class="nm-card__badge nm-card__badge--{{ block.settings.badge_style }}">{{ block.settings.badge | escape }}</span>
+          {%- endif -%}
+          {%- if block.settings.description != blank -%}
+            <p class="nm-card__desc">{{ block.settings.description | escape }}</p>
+          {%- endif -%}
+          {%- if price_text != blank -%}
+            <p class="nm-card__price">{{ price_text | escape }}</p>
+          {%- endif -%}
+          <div class="nm-card__media">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', widths: '300, 450, 600', sizes: '300px', alt: title | remove: ' |' }}
+            {%- elsif p.featured_media != blank -%}
+              {{ p.featured_media | image_url: width: 600 | image_tag: loading: 'lazy', widths: '300, 450, 600', sizes: '300px', alt: title | remove: ' |' }}
+            {%- elsif block.settings.image_default != 'none' -%}
+              {%- case block.settings.image_default -%}
+                {%- when 'nm-product-sildenafil' -%}{%- assign iw = 572 -%}{%- assign ih = 562 -%}
+                {%- when 'nm-product-trazodone' -%}{%- assign iw = 526 -%}{%- assign ih = 558 -%}
+                {%- else -%}{%- assign iw = 430 -%}{%- assign ih = 602 -%}
+              {%- endcase -%}
+              <img src="{{ block.settings.image_default | append: '.png' | asset_url }}" alt="{{ title | remove: ' |' | escape }}" width="{{ iw }}" height="{{ ih }}" loading="lazy">
+            {%- endif -%}
+          </div>
+          {%- if block.settings.button_label != blank -%}
+            {%- if block.settings.disabled -%}
+              <span class="nm-btn {{ btn_class }} nm-card__btn" aria-disabled="true">{{ block.settings.button_label | escape }}</span>
+            {%- else -%}
+              <a class="nm-btn {{ btn_class }} nm-card__btn" href="{{ url | default: '#' }}">{{ block.settings.button_label | escape }}</a>
+            {%- endif -%}
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+    <button type="button" class="nm-products__next" data-nm-next aria-label="{{ 'general.slider.next_slide' | t }}">
+      <img src="{{ 'nm-arrow-circle.svg' | asset_url }}" alt="" width="73" height="73">
+      <img class="nm-products__chev" src="{{ 'nm-arrow-right.svg' | asset_url }}" alt="" width="36" height="36">
+    </button>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NM Product cards",
+  "class": "nm-section-products",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Italic text is highlighted in purple. Use \" | \" for a line break.",
+      "default": "Recognizing | Your <em>Uniqueness</em>"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Intro text",
+      "default": "We prioritize convenience and affordability, guaranteeing easy access to top-quality care that's always within your reach."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Product card",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product", "info": "Optional. Fills title, price, image and link when those are left empty." },
+        { "type": "text", "id": "title", "label": "Title", "info": "Use \" | \" for a line break." },
+        { "type": "number", "id": "title_width", "label": "Title max width (px)", "default": 300 },
+        { "type": "checkbox", "id": "featured", "label": "Highlighted (purple) card", "default": false },
+        { "type": "text", "id": "badge", "label": "Badge" },
+        {
+          "type": "select",
+          "id": "badge_style",
+          "label": "Badge style",
+          "options": [
+            { "value": "green", "label": "In stock (green)" },
+            { "value": "white", "label": "White" },
+            { "value": "amber", "label": "Coming soon (amber)" },
+            { "value": "red", "label": "Sold out (red)" }
+          ],
+          "default": "white"
+        },
+        { "type": "text", "id": "description", "label": "Description" },
+        { "type": "text", "id": "price_text", "label": "Price text", "info": "e.g. Price: $279" },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        {
+          "type": "select",
+          "id": "image_default",
+          "label": "Fallback image",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "nm-product-tirzepatide", "label": "Tirzepatide vial" },
+            { "value": "nm-product-semaglutide", "label": "Semaglutide vial" },
+            { "value": "nm-product-sildenafil", "label": "Sildenafil pack" },
+            { "value": "nm-product-trazodone", "label": "Trazodone bottle" }
+          ],
+          "default": "none"
+        },
+        { "type": "number", "id": "image_width", "label": "Image width (px)", "default": 215 },
+        { "type": "range", "id": "image_offset", "label": "Image top spacing", "min": 0, "max": 60, "step": 1, "unit": "px", "default": 0 },
+        { "type": "text", "id": "button_label", "label": "Button label", "default": "GET STARTED" },
+        { "type": "url", "id": "button_link", "label": "Button link" },
+        { "type": "checkbox", "id": "disabled", "label": "Disable button (coming soon / sold out)", "default": false }
+      ]
+    }
+  ],
+  "presets": [{ "name": "NM Product cards" }]
+}
+{% endschema %}

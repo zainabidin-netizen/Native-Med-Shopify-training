@@ -1,0 +1,68 @@
+<svg width="101" height="19" viewBox="0 0 101 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="1">
+<g id="Section">
+<g id="Iframe &#226;&#134;&#146; Body" clip-path="url(#clip0_0_1)">
+<g id="Container">
+<g id="Container_2" clip-path="url(#clip1_0_1)">
+<g id="Container_3" clip-path="url(#clip2_0_1)">
+<g id="Container_4" clip-path="url(#clip3_0_1)">
+<g id="5 star review, This is the best thing I have ever&#226;&#128;&#166;, &#10;        12 hours ago" filter="url(#filter0_d_0_1)">
+<rect x="-15" y="-15" width="248.8" height="159" rx="2" fill="#F8F9FA" shape-rendering="crispEdges"/>
+<g id="Img">
+<g id="Group">
+<path id="Vector" d="M0.0385742 18.4414H18.5006V0H0.0385742V18.4414Z" fill="#00B67A"/>
+<path id="Vector_2" d="M15.7768 7.84578L5.30532 15.4441L6.83331 10.7481L2.8335 7.84578H7.77746L9.30513 3.14941L10.8328 7.84578H15.7768ZM9.30551 12.5422L12.1653 11.9413L13.3047 15.4441L9.30551 12.5422Z" fill="white"/>
+</g>
+<g id="Group_2">
+<path id="Vector_3" d="M20.4404 18.4414H38.9025V0H20.4404V18.4414Z" fill="#00B67A"/>
+<path id="Vector_4" d="M20.4404 18.4414H29.6714V0H20.4404V18.4414Z" fill="#00B67A"/>
+<path id="Vector_5" d="M29.8925 12.4709L32.3447 11.9415L33.479 15.5239L29.6333 12.6569L25.6375 15.5239L27.1884 10.8108L23.1284 7.89799H28.1467L29.6969 3.18457L31.2477 7.89799H36.2656L29.8925 12.4709Z" fill="white"/>
+</g>
+<g id="Group_3">
+<path id="Vector_6" d="M40.8564 18.4414H59.3185V0H40.8564V18.4414Z" fill="#00B67A"/>
+<path id="Vector_7" d="M40.8564 18.4414H50.0875V0H40.8564V18.4414Z" fill="#00B67A"/>
+<path id="Vector_8" d="M56.5951 7.84578L46.1237 15.4441L47.6517 10.7481L43.6519 7.84578H48.5958L50.1235 3.14941L51.6512 7.84578L56.5951 7.84578ZM50.1239 12.5422L52.9836 11.9413L54.123 15.4441L50.1239 12.5422Z" fill="white"/>
+</g>
+<g id="Group_4">
+<path id="Vector_9" d="M61.2725 18.4414H79.7345V0H61.2725V18.4414Z" fill="#00B67A"/>
+<path id="Vector_10" d="M61.2725 18.4414H70.5035V0H61.2725V18.4414Z" fill="#00B67A"/>
+<path id="Vector_11" d="M77.0107 7.84578L66.5395 15.4441L68.0672 10.7481L64.0674 7.84578H69.0114L70.539 3.14941L72.0667 7.84578L77.0107 7.84578ZM70.5394 12.5422L73.3992 11.9413L74.5386 15.4441L70.5394 12.5422Z" fill="white"/>
+</g>
+<g id="Group_5">
+<path id="Vector_12" d="M81.6743 18.4414H100.136V0H81.6743V18.4414Z" fill="#00B67A"/>
+<path id="Vector_13" d="M81.6743 18.4414H90.9053V0H81.6743V18.4414Z" fill="#00B67A"/>
+<path id="Vector_14" d="M97.412 7.84578L86.9409 15.4441L88.4686 10.7481L84.4688 7.84578H89.4127L90.9404 3.14941L92.468 7.84578H97.412ZM90.9408 12.5422L93.8005 11.9413L94.9399 15.4441L90.9408 12.5422Z" fill="white"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_0_1" x="-15" y="-15" width="248.8" height="160" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="1"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.713726 0 0 0 0 0.768627 0 0 0 0 0.823529 0 0 0 0.4 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+</filter>
+<clipPath id="clip0_0_1">
+<rect width="1440" height="240" fill="white" transform="translate(-65 -25)"/>
+</clipPath>
+<clipPath id="clip1_0_1">
+<rect width="1440" height="160" fill="white" transform="translate(-65 -15)"/>
+</clipPath>
+<clipPath id="clip2_0_1">
+<rect width="1340" height="160" fill="white" transform="translate(-15 -15)"/>
+</clipPath>
+<clipPath id="clip3_0_1">
+<rect width="4092" height="160" fill="white" transform="translate(-15 -15)"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,52 @@
+<section class="nm nm-faq">
+  <div class="nm-container">
+    {%- if section.settings.pill != blank -%}
+      <p class="nm-pill nm-faq__pill">{{ section.settings.pill | escape }}</p>
+    {%- endif -%}
+    <h2 class="nm-h2">{{ section.settings.heading }}</h2>
+
+    <div class="nm-faq__list">
+      {%- for block in section.blocks -%}
+        <details class="nm-faq__item"{% if block.settings.open %} open{% endif %} {{ block.shopify_attributes }}>
+          <summary class="nm-faq__q">
+            <span class="nm-faq__q-text">{{ block.settings.question | escape }}</span>
+            <span class="nm-faq__icon" aria-hidden="true">
+              <img class="nm-faq__icon-closed" src="{{ 'nm-faq-closed.svg' | asset_url }}" alt="" width="35" height="35" loading="lazy">
+              <img class="nm-faq__icon-open" src="{{ 'nm-faq-open.svg' | asset_url }}" alt="" width="35" height="35" loading="lazy">
+            </span>
+          </summary>
+          <div class="nm-faq__a">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NM FAQ",
+  "class": "nm-section-faq",
+  "settings": [
+    { "type": "text", "id": "pill", "label": "Label", "default": "FREQUENTLY ASKED QUESTIONS" },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Italic text is highlighted in purple.",
+      "default": "Your Questions, <em>Answered.</em>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Question" },
+        { "type": "richtext", "id": "answer", "label": "Answer", "info": "Numbered lists render with purple step markers.", "default": "<p>Answer</p>" },
+        { "type": "checkbox", "id": "open", "label": "Open by default", "default": false }
+      ]
+    }
+  ],
+  "presets": [{ "name": "NM FAQ" }]
+}
+{% endschema %}
