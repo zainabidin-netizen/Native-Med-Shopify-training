@@ -1,0 +1,62 @@
+<section class="nm nm-reviews" id="nm-reviews" data-nm-reviews>
+  <h2 class="nm-reviews__title">{{ section.settings.heading | escape }}</h2>
+
+  <div class="nm-reviews__carousel">
+    <button type="button" class="nm-reviews__arrow nm-reviews__arrow--prev" data-nm-prev aria-label="{{ 'general.slider.previous_slide' | t }}">
+      <img src="{{ 'nm-review-prev.svg' | asset_url }}" alt="" width="24" height="24">
+    </button>
+    <div class="nm-reviews__viewport">
+      <ul class="nm-reviews__track" data-nm-track>
+        {%- for block in section.blocks -%}
+          <li class="nm-review" {{ block.shopify_attributes }}>
+            <img class="nm-review__stars" src="{{ 'nm-review-stars.svg' | asset_url }}" alt="{{ section.settings.stars_alt | escape }}" width="100" height="18" loading="lazy">
+            <p class="nm-review__title">{{ block.settings.title | escape }}</p>
+            <p class="nm-review__body">{{ block.settings.body | escape }}</p>
+            <p class="nm-review__meta"><strong>{{ block.settings.author | escape }},</strong> {{ block.settings.date | escape }}</p>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    <button type="button" class="nm-reviews__arrow nm-reviews__arrow--next" data-nm-next aria-label="{{ 'general.slider.next_slide' | t }}">
+      <img src="{{ 'nm-review-next.svg' | asset_url }}" alt="" width="24" height="24">
+    </button>
+  </div>
+
+  {%- if section.settings.summary != blank -%}
+    <p class="nm-reviews__summary">{{ section.settings.summary }}</p>
+  {%- endif -%}
+  {%- if section.settings.show_logo -%}
+    <img class="nm-reviews__logo" src="{{ 'nm-trustpilot.svg' | asset_url }}" alt="Trustpilot" width="80" height="20" loading="lazy">
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "NM Reviews",
+  "class": "nm-section-reviews",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "People love talking about NativeMed" },
+    {
+      "type": "inline_richtext",
+      "id": "summary",
+      "label": "Summary",
+      "default": "Rated <strong>4.8</strong> / 5 based on <a href=\"#\">225 reviews</a>. Showing our 4 & 5 star reviews."
+    },
+    { "type": "checkbox", "id": "show_logo", "label": "Show Trustpilot logo", "default": true },
+    { "type": "text", "id": "stars_alt", "label": "Stars alt text", "default": "5 out of 5 stars" }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Great experience" },
+        { "type": "textarea", "id": "body", "label": "Review" },
+        { "type": "text", "id": "author", "label": "Author", "default": "Customer" },
+        { "type": "text", "id": "date", "label": "Date", "default": "1 day ago" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "NM Reviews" }]
+}
+{% endschema %}
