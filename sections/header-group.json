@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -48,11 +39,29 @@
         "margin_bottom": 0,
         "padding_top": 8,
         "padding_bottom": 8
+      },
+      "disabled": true
+    },
+    "nm-announcement": {
+      "type": "nm-announcement",
+      "settings": {
+        "text": "Summer Savings: Semaglutide for Just <strong>$169/mo</strong>. Any Dose!",
+        "link": "",
+        "show_icon": true
+      }
+    },
+    "nm-header": {
+      "type": "nm-header",
+      "settings": {
+        "logo": "shopify://shop_images/nm-logo.svg",
+        "menu": "nativemed-main-menu"
       }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "nm-announcement",
+    "nm-header"
   ]
 }

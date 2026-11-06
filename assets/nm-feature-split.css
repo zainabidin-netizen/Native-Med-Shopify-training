@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Feature split (Sustainable weight loss)
+   ========================================================================== */
+.nm-split { background: var(--nm-lilac); }
+.nm-split__inner {
+  position: relative;
+  max-width: var(--nm-max);
+  margin: 0 auto;
+  min-height: 550px;
+  display: grid;
+  grid-template-columns: 550px 1fr;
+  column-gap: 186px;
+  align-items: center;
+}
+.nm-split__media { align-self: stretch; display: flex; align-items: flex-end; }
+.nm-split__media img { width: 550px; height: 550px; object-fit: cover; }
+.nm-split__media--mirror img { transform: scaleX(-1); }
+.nm-split__content { padding: 62px var(--nm-gutter) 63px 0; }
+.nm-split__pill { background: var(--nm-blush); }
+.nm-split .nm-h2 { margin-top: 9px; max-width: 702px; }
+.nm-split__features {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 270px);
+  column-gap: 63px;
+  row-gap: 20px;
+}
+.nm-split__feature { display: flex; align-items: center; gap: 15px; min-height: 70px; }
+.nm-split__icon {
+  flex: none;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nm-split__icon img { width: 30px; height: 30px; }
+.nm-split__feature-text { max-width: 200px; font: 400 21px/35px var(--nm-font-display); color: var(--nm-ink); }
+.nm-split__btn { margin-top: 25px; width: 249px; }
+@media screen and (max-width: 1199px) {
+  .nm-split__inner { grid-template-columns: 440px 1fr; column-gap: 40px; }
+  .nm-split__media img { width: 440px; height: 440px; }
+  .nm-split__features { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; }
+}
+@media screen and (max-width: 989px) {
+  .nm-split__inner { grid-template-columns: 1fr; }
+  .nm-split__content { padding: 32px var(--nm-gutter) 48px; }
+  .nm-split__media { justify-content: center; }
+  .nm-split__media img { width: min(100%, 440px); height: auto; }
+}
+@media screen and (max-width: 549px) {
+  .nm-split__features { grid-template-columns: 1fr; }
+}

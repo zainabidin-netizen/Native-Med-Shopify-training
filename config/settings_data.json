@@ -176,7 +176,9 @@
           "show_desktop": true
         }
       }
-    }
+    },
+    "nm_body_font": "inter_n4",
+    "nm_texture": "shopify://shop_images/nm-texture.jpg"
   },
   "presets": {
     "Default": {

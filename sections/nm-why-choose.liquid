@@ -1,0 +1,46 @@
+{{ 'nm-why-choose.css' | asset_url | stylesheet_tag }}
+
+<section class="nm nm-why">
+  <div class="nm-container">
+    <h2 class="nm-h2">{{ section.settings.heading | replace: ' | ', ' <br>' }}</h2>
+    <ul class="nm-why__grid">
+      {%- for block in section.blocks -%}
+        <li class="nm-why__card" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != blank -%}
+            {{ block.settings.icon | image_url: width: 110 | image_tag: width: 55, height: 55, alt: '', loading: 'lazy' }}
+          {%- endif -%}
+          <h3 class="nm-why__title">{{ block.settings.title | escape }}</h3>
+          <p class="nm-why__text">{{ block.settings.text | escape | replace: ' | ', ' <br>' }}</p>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NM Why choose",
+  "class": "nm-section-why",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Italic text is highlighted in purple.",
+      "default": "Why Choose <em>Nativemed</em>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "reason",
+      "name": "Reason",
+      "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Reason" },
+        { "type": "text", "id": "text", "label": "Text", "info": "Use \" | \" for a line break." }
+      ]
+    }
+  ],
+  "presets": [{ "name": "NM Why choose" }]
+}
+{% endschema %}

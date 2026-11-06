@@ -1,0 +1,50 @@
+{{ 'nm-steps.css' | asset_url | stylesheet_tag }}
+
+<section class="nm nm-steps nm-textured nm-textured--flip">
+  <div class="nm-container">
+    <h2 class="nm-h2">{{ section.settings.heading | replace: ' | ', ' <br>' }}</h2>
+    <ol class="nm-steps__grid">
+      {%- for block in section.blocks -%}
+        <li class="nm-step" style="--nm-step-img-w: {{ block.settings.image_width }}px; --nm-step-img-offset: {{ block.settings.image_offset }}px;" {{ block.shopify_attributes }}>
+          <div class="nm-step__media">
+            <div class="nm-step__bg"></div>
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 800 | image_tag: class: 'nm-step__img', loading: 'lazy', widths: '200, 400, 600, 800', sizes: '(min-width: 750px) 370px, 60vw', alt: block.settings.title }}
+            {%- endif -%}
+          </div>
+          <span class="nm-step__num" aria-hidden="true">{{ forloop.index }}</span>
+          <h3 class="nm-step__title">{{ block.settings.title | escape }}</h3>
+        </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NM Steps",
+  "class": "nm-section-steps",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Italic text is highlighted in purple. Use \" | \" for a line break.",
+      "default": "Start Losing Weight In | <em>3-Easy Steps</em>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Step" },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "number", "id": "image_width", "label": "Image width (px)", "default": 206 },
+        { "type": "range", "id": "image_offset", "label": "Image overhang below card", "min": 0, "max": 40, "step": 1, "unit": "px", "default": 0 }
+      ]
+    }
+  ],
+  "presets": [{ "name": "NM Steps" }]
+}
+{% endschema %}

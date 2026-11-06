@@ -1,0 +1,77 @@
+{%- comment -%} Dependencies normally loaded by Dawn's header (cart drawer + search scripts) {%- endcomment -%}
+<link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
+{%- if settings.cart_type == 'drawer' -%}
+  {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+  {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+  {{ 'component-totals.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+  {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+<script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
+
+{%- capture nm_nav_items -%}
+  {%- for link in section.settings.menu.links -%}
+    {%- liquid
+      assign is_active = false
+      if link.current
+        assign is_active = true
+      elsif link.active and link.url != routes.root_url
+        assign is_active = true
+      endif
+      if link.url contains '#'
+        assign is_active = false
+      endif
+    -%}
+    <li>
+      <a class="nm-nav__link{% if is_active %} is-active{% endif %}" href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>
+        {{- link.title | escape -}}
+      </a>
+    </li>
+  {%- endfor -%}
+{%- endcapture -%}
+
+<header class="nm nm-header">
+  <div class="nm-container nm-header__inner">
+    <details class="nm-mnav">
+      <summary aria-label="{{ 'sections.header.menu' | t }}"><span class="nm-mnav__bars"></span></summary>
+      <div class="nm-mnav__panel">
+        <nav aria-label="{{ 'sections.header.menu' | t }}"><ul class="nm-nav__list">{{ nm_nav_items }}</ul></nav>
+      </div>
+    </details>
+
+    <a class="nm-header__logo" href="{{ routes.root_url }}">
+      {%- if section.settings.logo != blank -%}
+        {{ section.settings.logo | image_url: width: 216 | image_tag: width: 108, alt: shop.name, loading: 'eager' }}
+      {%- else -%}
+        <span class="nm-header__logo-text">{{ shop.name | escape }}</span>
+      {%- endif -%}
+    </a>
+
+    <nav class="nm-nav" aria-label="{{ 'sections.header.menu' | t }}">
+      <ul class="nm-nav__list">{{ nm_nav_items }}</ul>
+    </nav>
+
+    <div class="nm-header__icons">
+      <a class="nm-header__icon" href="{{ routes.search_url }}" aria-label="{{ 'general.search.search' | t }}">
+        {%- render 'nm-icon', icon: 'search' -%}
+      </a>
+      <a class="nm-header__icon" id="cart-icon-bubble" href="{{ routes.cart_url }}">
+        {%- render 'nm-cart-icon' -%}
+      </a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "NM Header",
+  "class": "nm-section-header",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo" },
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu", "info": "Manage links in Online Store > Navigation." }
+  ],
+  "presets": [{ "name": "NM Header" }]
+}
+{% endschema %}

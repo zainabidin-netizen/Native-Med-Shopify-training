@@ -1,0 +1,127 @@
+{%- assign s = section.settings -%}
+<footer class="nm nm-footer nm-textured">
+  <div class="nm-footer__top">
+    <div class="nm-footer__brand">
+      <a class="nm-footer__logo" href="{{ routes.root_url }}">
+        {%- if s.logo != blank -%}
+          {{ s.logo | image_url: width: 260 | image_tag: width: 130, alt: shop.name, loading: 'lazy' }}
+        {%- else -%}
+          <span class="nm-footer__logo-text">{{ shop.name | escape }}</span>
+        {%- endif -%}
+      </a>
+      {%- if s.tagline != blank -%}
+        <p class="nm-footer__tagline">{{ s.tagline | escape | replace: ' | ', ' <br>' }}</p>
+      {%- endif -%}
+      <div class="nm-footer__rule" role="presentation"></div>
+      <div class="nm-footer__badges">
+        {%- if s.legitscript_image != blank -%}
+          <a class="nm-legit" href="{{ s.legitscript_url | default: '#' }}" target="_blank" rel="noopener" aria-label="LegitScript certified {{ s.legitscript_domain | escape }}">
+            {{ s.legitscript_image | image_url: width: 333 | image_tag: width: 111, alt: '', loading: 'lazy' }}
+            <span class="nm-legit__domain">{{ s.legitscript_domain | escape }}</span>
+            <span class="nm-legit__date">{{ s.legitscript_date | escape }}</span>
+          </a>
+        {%- endif -%}
+        {%- if s.hipaa_image != blank -%}
+          {{ s.hipaa_image | image_url: width: 387 | image_tag: class: 'nm-footer__hipaa', width: 129, alt: s.hipaa_image.alt, loading: 'lazy' }}
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="nm-footer__nav">
+      {%- for block in section.blocks -%}
+        <div {{ block.shopify_attributes }}>
+          {%- case block.type -%}
+            {%- when 'links' -%}
+              <p class="nm-footer__heading">{{ block.settings.heading | escape }}</p>
+              <ul class="nm-footer__links">
+                {%- if block.settings.menu != blank -%}
+                  {%- for link in block.settings.menu.links -%}
+                    <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+                  {%- endfor -%}
+                {%- else -%}
+                  {%- assign lines = block.settings.fallback_links | newline_to_br | split: '<br />' -%}
+                  {%- for line in lines -%}
+                    {%- assign parts = line | strip | split: '|' -%}
+                    {%- if parts[0] != blank -%}
+                      <li><a href="{{ parts[1] | strip | default: '#' }}">{{ parts[0] | strip | escape }}</a></li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                {%- endif -%}
+              </ul>
+            {%- when 'contact' -%}
+              <p class="nm-footer__heading">{{ block.settings.heading | escape }}</p>
+              {%- if block.settings.phone != blank -%}
+                <p class="nm-footer__phone nm-footer__text">
+                  {%- render 'nm-icon', icon: 'phone' -%}
+                  <a href="tel:{{ block.settings.phone | remove: ' ' | remove: '(' | remove: ')' | remove: '-' }}">{{ block.settings.phone | escape }}</a>
+                </p>
+              {%- endif -%}
+              {%- if block.settings.follow_label != blank -%}
+                <p class="nm-footer__follow nm-footer__text">{{ block.settings.follow_label | escape }}</p>
+              {%- endif -%}
+              <div class="nm-footer__social">
+                {%- if block.settings.facebook != blank -%}
+                  <a href="{{ block.settings.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">{%- render 'nm-icon', icon: 'facebook' -%}</a>
+                {%- endif -%}
+                {%- if block.settings.instagram != blank -%}
+                  <a href="{{ block.settings.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">{%- render 'nm-icon', icon: 'instagram' -%}</a>
+                {%- endif -%}
+                {%- if block.settings.tiktok != blank -%}
+                  <a href="{{ block.settings.tiktok }}" target="_blank" rel="noopener" aria-label="TikTok">{%- render 'nm-icon', icon: 'tiktok' -%}</a>
+                {%- endif -%}
+              </div>
+          {%- endcase -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="nm-footer__bottom">
+    <div class="nm-footer__bottom-inner">
+      <p class="nm-footer__text">{{ s.copyright | escape }}</p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "NM Footer",
+  "class": "nm-section-footer",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo" },
+    { "type": "text", "id": "tagline", "label": "Tagline", "info": "Use \" | \" for a line break.", "default": "No Diet. No Exercise. | Ditch The Weight, Gain Control." },
+    { "type": "image_picker", "id": "legitscript_image", "label": "LegitScript badge" },
+    { "type": "text", "id": "legitscript_domain", "label": "LegitScript domain", "default": "NATIVEMED.NET" },
+    { "type": "text", "id": "legitscript_date", "label": "LegitScript date", "default": "08/28/24" },
+    { "type": "url", "id": "legitscript_url", "label": "LegitScript verification link" },
+    { "type": "image_picker", "id": "hipaa_image", "label": "HIPAA badge" },
+    { "type": "text", "id": "copyright", "label": "Copyright", "default": "© 2024 NativeMed" }
+  ],
+  "blocks": [
+    {
+      "type": "links",
+      "name": "Link column",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Quick Links" },
+        { "type": "link_list", "id": "menu", "label": "Menu" },
+        { "type": "textarea", "id": "fallback_links", "label": "Links (used when no menu is selected)", "info": "One per line: Label|/url" }
+      ]
+    },
+    {
+      "type": "contact",
+      "name": "Contact",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Get in touch" },
+        { "type": "text", "id": "phone", "label": "Phone", "default": "+1 (833) 850-8585" },
+        { "type": "text", "id": "follow_label", "label": "Social label", "default": "Follow Us:" },
+        { "type": "text", "id": "facebook", "label": "Facebook URL", "default": "https://www.facebook.com/" },
+        { "type": "text", "id": "instagram", "label": "Instagram URL", "default": "https://www.instagram.com/" },
+        { "type": "text", "id": "tiktok", "label": "TikTok URL", "default": "https://www.tiktok.com/" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "NM Footer" }]
+}
+{% endschema %}

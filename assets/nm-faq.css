@@ -1,0 +1,70 @@
+/* ==========================================================================
+   FAQ
+   ========================================================================== */
+.nm-faq { background: #fff; padding: 60px 0 80px; }
+.nm-faq__pill { background: var(--nm-rose); }
+.nm-faq .nm-h2 { margin-top: 9px; }
+.nm-faq__list { margin-top: 51px; display: flex; flex-direction: column; gap: 20px; padding: 0 0 0 1px; }
+.nm-faq__item {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  background: var(--nm-cream);
+}
+.nm-faq__item[open] { border-color: transparent; border-radius: 10px; background: var(--nm-rose); }
+.nm-faq__q {
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 19px 18px;
+  min-height: 73px;
+  cursor: pointer;
+}
+.nm-faq__q::-webkit-details-marker { display: none; }
+.nm-faq__q-text {
+  padding-top: 4px;
+  font: 500 21px/26px var(--nm-font-display);
+  letter-spacing: 1px;
+  color: var(--nm-ink);
+}
+.nm-faq__icon { position: relative; flex: none; width: 35px; height: 35px; }
+.nm-faq__icon .nm-icon { position: absolute; inset: 0; width: 35px; height: 35px; transition: opacity .2s ease; }
+.nm-faq__icon-open { opacity: 0; }
+.nm-faq__item[open] .nm-faq__icon-open { opacity: 1; }
+.nm-faq__item[open] .nm-faq__icon-closed { opacity: 0; }
+.nm-faq__a {
+  margin-top: -3px;
+  padding: 0 20px 20px;
+  max-width: 941px;
+  font: 400 18px/23px var(--nm-font-body);
+  letter-spacing: 1px;
+  color: rgba(45, 45, 45, 0.8);
+}
+.nm-faq__a p + p { margin-top: 12px; }
+.nm-faq__a ol { margin-top: 25px; counter-reset: nm-faq; display: flex; flex-direction: column; gap: 20px; }
+.nm-faq__a ol li {
+  counter-increment: nm-faq;
+  position: relative;
+  min-height: 26px;
+  padding: 2px 0 0 41px;
+}
+.nm-faq__a ol li::before {
+  content: counter(nm-faq);
+  position: absolute;
+  left: 0; top: 0;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--nm-purple);
+  color: #fff;
+  text-align: center;
+  font: 500 16px/26px var(--nm-font-display);
+  letter-spacing: 0;
+}
+.nm-faq__a a { color: var(--nm-purple); }
+@media screen and (max-width: 749px) {
+  .nm-faq { padding: 48px 0 56px; }
+  .nm-faq__list { margin-top: 32px; gap: 12px; }
+  .nm-faq__q-text { font-size: 18px; line-height: 24px; }
+  .nm-faq__a { font-size: 16px; line-height: 22px; }
+}

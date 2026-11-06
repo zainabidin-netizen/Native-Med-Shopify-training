@@ -1,0 +1,71 @@
+{{ 'nm-weight-calculator.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'nm-weight-calculator.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign s = section.settings
+  assign start = s.start_weight
+  if start < s.min_weight
+    assign start = s.min_weight
+  endif
+  if start > s.max_weight
+    assign start = s.max_weight
+  endif
+  assign loss = start | times: s.percent | divided_by: 100.0 | round
+-%}
+<section class="nm nm-calc" data-nm-calc data-percent="{{ s.percent }}" data-unit="{{ s.unit | escape }}">
+  <div class="nm-container nm-calc__inner">
+    <div class="nm-calc__intro">
+      <h2 class="nm-h2 nm-h2--ink-em">{{ s.heading | replace: ' | ', ' <br>' }}</h2>
+      {%- if s.button_label != blank -%}
+        <a class="nm-btn nm-btn--primary nm-calc__btn" href="{{ s.button_link | default: '#' }}">{{ s.button_label | escape }}</a>
+      {%- endif -%}
+    </div>
+
+    <div class="nm-calc__card">
+      <div class="nm-calc__head">
+        <label class="nm-calc__label" for="NmCalc-{{ section.id }}">{{ s.label | escape }}</label>
+        <output class="nm-calc__value" data-nm-weight for="NmCalc-{{ section.id }}">{{ start }}{{ s.unit }}</output>
+      </div>
+      <input
+        class="nm-calc__range"
+        id="NmCalc-{{ section.id }}"
+        type="range"
+        min="{{ s.min_weight }}"
+        max="{{ s.max_weight }}"
+        step="1"
+        value="{{ start }}"
+        data-nm-range
+      >
+      <div class="nm-calc__result" aria-live="polite">
+        <span class="nm-calc__result-label">{{ s.result_label | escape }}</span>
+        <output class="nm-calc__result-value" data-nm-loss>{{ loss }}{{ s.unit }}</output>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NM Weight calculator",
+  "class": "nm-section-calc",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Use \" | \" for a line break.",
+      "default": "How Much Weight Could | You <em>Lose</em> With <em>Nativemed</em>?"
+    },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "GET QUALIFIED TODAY" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "text", "id": "label", "label": "Slider label", "default": "Select your current weight" },
+    { "type": "text", "id": "result_label", "label": "Result label", "default": "Weight you could lose (lb.) :" },
+    { "type": "text", "id": "unit", "label": "Unit", "default": "lb." },
+    { "type": "number", "id": "min_weight", "label": "Minimum weight", "default": 210 },
+    { "type": "number", "id": "max_weight", "label": "Maximum weight", "default": 500 },
+    { "type": "number", "id": "start_weight", "label": "Starting weight", "default": 242 },
+    { "type": "range", "id": "percent", "label": "Expected loss", "min": 5, "max": 30, "step": 1, "unit": "%", "default": 20 }
+  ],
+  "presets": [{ "name": "NM Weight calculator" }]
+}
+{% endschema %}
